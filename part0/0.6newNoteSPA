@@ -1,0 +1,17 @@
+title Note communication -- singele app
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+Server->Browser: spa.html
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server->Browser: main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Server->Browser: spa.js
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server->Browser: data.json
+
+note over Browser,Server:
+adding new note
+end note
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+Server->Browser: {"message":"note created"}
