@@ -24,13 +24,6 @@ const App = () => {
 
         <Button handleClick={() => setBad(bad + 1)} title="Bad"></Button>
       </div>
-      <div>
-        <h1>Statistics</h1>
-
-        <p>Good {good}</p>
-        <p>Neutral {neutral}</p>
-        <p>Bad {bad}</p>
-      </div>
     </div>
   );
 };
