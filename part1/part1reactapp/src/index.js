@@ -6,10 +6,12 @@ const Button = (props) => (
 );
 
 const Statistic = (props) => (
-  <p>
-    {props.text} {props.value}
-    {props.symbol}
-  </p>
+  <tr>
+    <td>{props.text}</td>
+    <td>
+      {props.value} {props.symbol}
+    </td>
+  </tr>
 );
 
 const Statistics = ({ good, bad, neutral }) => {
@@ -17,26 +19,28 @@ const Statistics = ({ good, bad, neutral }) => {
     return <h3>No feedback given yet</h3>;
   } else {
     return (
-      <div>
-        <Statistic text="Good" value={good} />
+      <table>
+        <tbody>
+          <Statistic text="Good" value={good} />
 
-        <Statistic text="Neutral" value={neutral} />
+          <Statistic text="Neutral" value={neutral} />
 
-        <Statistic text="Bad" value={bad} />
+          <Statistic text="Bad" value={bad} />
 
-        <Statistic text="All" value={good + bad + neutral} />
+          <Statistic text="All" value={good + bad + neutral} />
 
-        <Statistic
-          text="Average"
-          value={(good * 1 + neutral * 0 + bad * -1) / (good + neutral + bad)}
-        />
+          <Statistic
+            text="Average"
+            value={(good * 1 + neutral * 0 + bad * -1) / (good + neutral + bad)}
+          />
 
-        <Statistic
-          text="Positive"
-          value={(good / (good + neutral + bad)) * 100}
-          symbol="%"
-        />
-      </div>
+          <Statistic
+            text="Positive"
+            value={(good / (good + neutral + bad)) * 100}
+            symbol="%"
+          />
+        </tbody>
+      </table>
     );
   }
 };
